@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BTC info web</title>
+
+    <style>
+        body{
+            padding: 150px;
+            background: black;
+            color: chartreuse;
+
+            text-decoration: none;
+            align-content: center;
+            align-items: center;
+            text-align: center;
+
+
+        }
+        h1{
+            font-size: 5rem;
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+<h1>現在幾點?</h1>
+<p id="datetime"><p>
+
+<script>
+    function updateDateTime() {
+        const now = new Date();
+        const dateString = now.toLocaleDateString();
+        const timeString = now.toLocaleTimeString() + '.' + now.getMilliseconds().toString().padStart(3, '0');
+        document.getElementById('datetime').innerText = `${dateString} ${timeString}`;
+    }
+
+    setInterval(updateDateTime, 1);  // Update every millisecond
+
+
+    </script>
+
+
+</body>
+</html>
